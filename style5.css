@@ -6,8 +6,9 @@
 }
 
 .services-section{
-  background: url(https://sankalpabaral.cf//bg.jpg);
+  background: url(https://sankalpabaral.cf//bg1.jpg);
   background-size: cover;
+  background-color: blue;
   padding: 60px 0;
 }
 .inner-width{
