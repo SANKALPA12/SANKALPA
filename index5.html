@@ -2,40 +2,79 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://sankalpabaral.cf/style5.css">
     <title></title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
   </head>
   <body>
+    <div class="services-section">
+      <div class="inner-width">
+        <h1 class="section-title">Our Services</h1>
+        <div class="border"></div>
+        <div class="services-container">
 
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <div class="service-title">Web Designs</div>
+            <div class="service-desc">
+             We are always with you to help for web designs 
+            </div>
+          </div>
 
-  <div class="eyes">
-    <div class="eye">
-      <div class="ball"></div>
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="service-title">Web Development</div>
+            <div class="service-desc">
+             Helping you to develop the website .
+            </div>
+          </div>
+
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-brush"></i>
+            </div>
+            <div class="service-title">Responsive Designs</div>
+            <div class="service-desc">
+             We are teaching you how to make site responsive 
+            </div>
+          </div>
+
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-object-ungroup"></i>
+            </div>
+            <div class="service-title">Edit Sections</div>
+            <div class="service-desc">
+             We are helping you in edit sections also 
+            </div>
+          </div>
+
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <div class="service-title">Databases</div>
+            <div class="service-desc">
+             Giving knowledge about data base 
+            </div>
+          </div>
+
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fab fa-android"></i>
+            </div>
+            <div class="service-title">Android</div>
+            <div class="service-desc">
+              Teaching you how to develop android apps 
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="eye">
-      <div class="ball"></div>
-    </div>
-  </div>
-
-
-<script>
-  var balls = document.getElementsByClassName("ball");
-  document.onmousemove = function(){
-    var x = event.clientX * 100 / window.innerWidth + "%";
-    var y = event.clientY * 100 / window.innerHeight + "%";
-    //event.clientX => get the horizontal coordinate of the mouse
-    //event.clientY => get the Vertical coordinate of the mouse
-    //window.innerWidth => get the browser width
-    //window.innerHeight => get the browser height
-
-    for(var i=0;i<2;i++){
-      balls[i].style.left = x;
-      balls[i].style.top = y;
-      balls[i].style.transform = "translate(-"+x+",-"+y+")";
-    }
-  }
-</script>
-
   </body>
 </html>
