@@ -1,7 +1,20 @@
-const hamburger_icon = document.querySelector('#nav-bar .nav-bar .nav-list .hamburger');
-const nav_list = document.querySelector('#nav-bar .nav-bar .nav-list');
+$(document).ready(function(){
+  $(window).scroll(function(){
+    if(this.scrollY > 20) 
+      $(".navbar").addClass("sticky");
+    else
+      $(".navbar").removeClass("sticky");
+  });
 
-hamburger_icon.addEventListener('click', () => {
-	nav_list.classList.toggle('open');
-	hamburger_icon.classList.toggle('active');
+  $('.menu-toggler').click(function(){
+    $(this).toggleClass("active");
+    $(".navbar-menu").toggleClass("active");
+  });
+
+  $(".works").magnificPopup({
+    delegate: 'a',
+    type: 'image',
+    gallery:{enabled:true}
+  });
 });
+
