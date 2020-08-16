@@ -31,7 +31,7 @@
 .logo{
   width: 44px;
   height: 32px;
-  background-image: url(..https://sankalpabaral.cf/white-logo.png);
+  background-image: url(../images/white-logo.png);
   background-size: contain;
 }
 
@@ -73,7 +73,7 @@
 }
 
 .sticky .logo{
-  background-image: url(..https://sankalpabaral.cf/pic.png);
+  background-image: url(../images/black-logo.png);
 }
 
 .sticky .navbar-menu a{
