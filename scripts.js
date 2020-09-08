@@ -1,41 +1,51 @@
-const navbar = document.querySelector(".navbar");
-const navbarOffsetTop = navbar.offsetTop;
-const sections = document.querySelectorAll("section");
-const navbarLinks = document.querySelectorAll(".navbar-link");
-const progress = document.querySelector(".progress-bars-wrapper");
-const progressBarPercents = [97, 89, 85, 87, 80, 70, 50];
-
-window.addEventListener("scroll", () => {
-  mainFn();
-});
-
-const mainFn = () => {
-  if (window.pageYOffset >= navbarOffsetTop) {
-    navbar.classList.add("sticky");
-  } else {
-    navbar.classList.remove("sticky");
-  }
-
-  sections.forEach((section, i) => {
-    if (window.pageYOffset >= section.offsetTop - 10) {
-      navbarLinks.forEach((navbarLink) => {
-        navbarLink.classList.remove("change");
+let nCount = selector => {
+  $(selector).each(function () {
+    $(this)
+      .animate({
+        Counter: $(this).text()
+      }, {
+        // A string or number determining how long the animation will run.
+        duration: 4000,
+        // A string indicating which easing function to use for the transition.
+        easing: "swing",
+        /**
+         * A function to be called for each animated property of each animated element. 
+         * This function provides an opportunity to
+         *  modify the Tween object to change the value of the property before it is set.
+         */
+        step: function (value) {
+          $(this).text(Math.ceil(value));
+        }
       });
-      navbarLinks[i].classList.add("change");
-    }
   });
-
-  if (window.pageYOffset + window.innerHeight >= progress.offsetTop) {
-    document.querySelectorAll(".progress-percent").forEach((el, i) => {
-      el.style.width = `${progressBarPercents[i]}%`;
-      el.previousElementSibling.firstElementChild.textContent =
-        progressBarPercents[i];
-    });
-  }
 };
 
-mainFn();
+let a = 0;
+$(window).scroll(function () {
+  // The .offset() method allows us to retrieve the current position of an element  relative to the document
+  let oTop = $(".numbers").offset().top - window.innerHeight;
+  if (a == 0 && $(window).scrollTop() >= oTop) {
+    a++;
+    nCount(".rect > h1");
+  }
+});
 
-window.addEventListener("resize", () => {
-  window.location.reload();
+
+
+/**
+ *
+ *  sticky navigation
+ *
+ */
+
+let navbar = $(".navbar");
+
+$(window).scroll(function () {
+  // get the complete hight of window
+  let oTop = $(".section-2").offset().top - window.innerHeight;
+  if ($(window).scrollTop() > oTop) {
+    navbar.addClass("sticky");
+  } else {
+    navbar.removeClass("sticky");
+  }
 });
